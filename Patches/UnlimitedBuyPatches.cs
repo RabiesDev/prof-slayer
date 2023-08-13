@@ -56,11 +56,11 @@ public class UnlimitedBuyPatches
 
     [HarmonyPatch(typeof(BuyEquipmentState), "BuyGadget")]
     [HarmonyPrefix]
-    static bool BuyGadgetPatch(GadgetBulletManager ___m_GadgetBulletManager)
+    static bool BuyGadgetPatch()
     {
-        PlayerGameProperty.Me.Modify(delegate
+        PlayerGameProperty.Me.Modify(delegate(IPlayerPropertyWriter propertyWriter)
         {
-            ___m_GadgetBulletManager.Charge(false, 1337);
+            propertyWriter.NewGadgetCount = 1337;
             Singleton.GameSystem.HUD.BuyUI.SetGadgetNumberOwned(1337,1337);
         });
         return false;

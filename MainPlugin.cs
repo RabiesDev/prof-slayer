@@ -20,7 +20,7 @@ public class MainPlugin : BaseUnityPlugin
     public static readonly List<BaseModule> Modules = new();
     public static readonly ManualLogSource Log = new(PluginInfo.PLUGIN_NAME);
     public static readonly string NewUuid = Guid.NewGuid().ToString();
-    public static readonly string NewName = "😅😅".Repeat(200);
+    public static readonly string NewName = "I am using cheats 🤡";
     public static PhotonView PhotonView;
 
     private void Awake()
@@ -49,7 +49,6 @@ public class MainPlugin : BaseUnityPlugin
         Harmony.CreateAndPatchAll(typeof(SystemInfoPatches));
 
         Harmony.CreateAndPatchAll(typeof(AccountSpoofPatches));
-        Harmony.CreateAndPatchAll(typeof(InfiniteGadgetBulletPatches));
         Harmony.CreateAndPatchAll(typeof(InfiniteGunBulletPatches));
         Harmony.CreateAndPatchAll(typeof(SuperAttackPatches));
         Harmony.CreateAndPatchAll(typeof(FastShootPatches));
