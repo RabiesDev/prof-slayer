@@ -1,0 +1,64 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net46</TargetFramework>
+    <AssemblyName>InternalCheat</AssemblyName>
+    <Description>My first plugin</Description>
+    <Version>1.0.0</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.Core" Version="5.*" />
+    <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*" />
+    <PackageReference Include="UnityEngine.Modules" Version="2020.3.24" IncludeAssets="compile" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="ACTk.Runtime">
+      <HintPath>Libraries\ACTk.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>Libraries\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Barracuda.Foundation">
+      <HintPath>Libraries\Barracuda.Foundation.dll</HintPath>
+    </Reference>
+    <Reference Include="DestMath">
+      <HintPath>Libraries\DestMath.dll</HintPath>
+    </Reference>
+    <Reference Include="Ganymede.Api">
+      <HintPath>Libraries\Ganymede.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Ganymede.Common">
+      <HintPath>Libraries\Ganymede.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ganymede.IntegrityCheck.Runtime">
+      <HintPath>Libraries\Ganymede.IntegrityCheck.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Ganymede.Recoiling">
+      <HintPath>Libraries\Ganymede.Recoiling.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard">
+      <HintPath>Libraries\netstandard.dll</HintPath>
+    </Reference>
+    <Reference Include="Photon3Unity3D">
+      <HintPath>Libraries\Photon3Unity3D.dll</HintPath>
+    </Reference>
+    <Reference Include="PhotonRealtime">
+      <HintPath>Libraries\PhotonRealtime.dll</HintPath>
+    </Reference>
+    <Reference Include="PhotonUnityNetworking">
+      <HintPath>Libraries\PhotonUnityNetworking.dll</HintPath>
+    </Reference>
+    <Reference Include="UniTask">
+      <HintPath>Libraries\UniTask.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
